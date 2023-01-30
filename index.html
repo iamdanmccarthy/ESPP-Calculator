@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calix ESPP Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&amp;family=Merriweather:ital@0;1&amp;family=Poppins:wght@200&amp;family=Work+Sans:wght@400;500;800&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <center> 
+  
+    
+    <div id="main">
+<img src="./images/calix_logo.png"> <h1>Employee Stock Purchase Plan Calculator</h1>
+<h2 id="h2a">Qualified Plan</h2>
+    Bi-Weekly Gross Pay: $ <input type="number" id="takeHomePay"><br><br>
+    Percent Towards ESPP: <input type="number" id="percentToESPP"> %<br><br>
+    Offering Period Opening Price: $ <input type="number" id="currentStockPrice"><br><br>
+    Offering Period Closing Price: $ <input type="number" id="previousStockPrice"><br><br>
+    <button type="button" id="calculate" onClick="runESPP()">Calculate</button>
+    <button type="button" type="button" onClick="window.location.reload();">Refresh</button><br><br>
+   <div id="investment">
+    Initial Investment<p id="totalInvestment"></p>
+   </div>
+   <div id="increase">
+    Money Earned<p id="totalIncrease"></p>
+</div>
+<div id="total">
+    <strong>Total<p id="totalEarnings"></p></strong>
+</div>
+
+
+
+<script src="scripts.js"></script>
+</div>
+
+
+
+<div id="main2" display="none">
+    <img src="./images/calix_logo.png"> <h1>Employee Stock Purchase Plan Calculator</h1>
+    <h2 id="h2b">Unqualified Plan</h2>
+    <form>
+        Bi-Weekly Gross Pay: $ <input type="number" id="takeHomePay2"><br><br>
+        Percent Towards ESPP: <input type="number" id="percentToESPP2"> %<br><br>
+        Today's Stock Price: $ <input type="number" id="currentStockPrice2"><br><br>
+        <!-- Stock Price Estimate in Three Months: $ <input type="number" id="previousStockPrice2"><br><br> -->
+        Stock Price Estimate in One Year: $ <input type="number" id="oneYearPrice"><br><br>
+       
+        <button type="button" id="calculate" onClick="runUnqualifiedESPP()">Calculate</button>
+        <button type="reset" value="Reset">Clear</button><br><br>
+       
+    </form>
+       <div id="investment">
+        Employee Investment<p id="totalInvestment2"></p>
+       </div>
+       <div id="increase">
+        Money Earned<p id="totalIncrease2"></p>
+    </div>
+    <div id="total">
+        <strong>Total<p id="totalEarnings2"></p></strong>
+    </div>
+    <div id="notice">The "matched shares" and the "total earned" are calculated after the estimated taxes have been removed</div>
+    </div>
+
+    <div>
+        <button type=button id="unqualified" onClick="showUnqualified()">UNQUALIFIED PLAN</button>
+        <button type=button id="qualified" onClick="showQualified()">QUALIFIED PLAN</button>
+    </div>
+    <div id="notice">This is meant to give an estimate as to potential stock earnings based on past stock performance, and in no way guarantees any specific return in the future. Copyright 2022 by Calix, inc.</div>
+</center>
+
+
+</body>
+</html>
